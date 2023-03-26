@@ -6,7 +6,7 @@ export default function ErrorPage() {
 
   return (
     <Stack alignItems="center" justifyContent="center" mt="20vh">
-      <Stack maxWidth={500} spacing={4} justifyContent="center" flexShrink={1} height="100%">
+      <Stack maxWidth={500} spacing={4} justifyContent="center">
         <Typography variant="h1" textAlign="center">
           Oops!
         </Typography>

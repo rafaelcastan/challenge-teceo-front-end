@@ -1,4 +1,4 @@
-import { Stack, InputAdornment, Button, useMediaQuery, Skeleton, Box } from "@mui/material";
+import { Stack, InputAdornment, Button, useMediaQuery, Skeleton } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 import { useMemo, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";

@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +11,7 @@ export default function Navbar() {
   const { toggleColorMode } = UseColorMode();
   return (
     <Box flexGrow={1}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar variant="dense">
           <Typography variant="h6" color="inherit" flexGrow={1}>
             ViaCEP
@@ -24,6 +23,7 @@ export default function Navbar() {
           />
         </Toolbar>
       </AppBar>
+      <Toolbar />
     </Box>
   );
 }
