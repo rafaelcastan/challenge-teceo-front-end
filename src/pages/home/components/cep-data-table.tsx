@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { memo } from "react";
 import { CepType } from "../../../types/cep";
+import { formatCep } from "../../../utils/formatCep";
 import RenderCardText from "./render-card-text";
 
 interface CepDataTableProps extends ContainerProps {
@@ -34,7 +35,7 @@ const CepDataTable = ({ cepData, isMobile, ...rest }: CepDataTableProps) => {
                 title="Localidade/UF"
                 text={`${cepData?.localidade ?? ""}/${cepData?.uf ?? ""}`}
               />
-              <RenderCardText title="CEP" text={cepData.cep} />
+              <RenderCardText title="CEP" text={formatCep(cepData.cep)} />
             </Stack>
           </CardContent>
         </Card>
@@ -62,13 +63,11 @@ const CepDataTable = ({ cepData, isMobile, ...rest }: CepDataTableProps) => {
         <TableBody>
           <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
             <TableCell component="th" scope="row">
-              {cepData?.logradouro}
+              {cepData.logradouro}
             </TableCell>
-            <TableCell align="left">{cepData?.bairro}</TableCell>
-            <TableCell align="left">
-              {`${cepData?.localidade ?? ""}/${cepData?.uf ?? ""}`}
-            </TableCell>
-            <TableCell align="left">{cepData?.cep}</TableCell>
+            <TableCell align="left">{cepData.bairro}</TableCell>
+            <TableCell align="left">{`${cepData.localidade ?? ""}/${cepData.uf ?? ""}`}</TableCell>
+            <TableCell align="left">{formatCep(cepData.cep)}</TableCell>
           </TableRow>
         </TableBody>
       </Table>

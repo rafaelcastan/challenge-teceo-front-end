@@ -26,7 +26,7 @@ const Home = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setIsSearching(true);
     try {
-      const response = (await api.get<CepType>(`${data.cep}/json/`)).data;
+      const response = (await api.get<CepType>(`/ceps/${data.cep}`)).data;
       setCepData(response);
     } catch (err) {
       showMessage({ message: "Falha ao localizar CEP", severity: "error" });
