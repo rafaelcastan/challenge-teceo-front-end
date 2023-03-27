@@ -18,7 +18,6 @@ The application is responsiviness and have dark theme.
 
 ## 🚀 Installation
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
 
 ```
 
