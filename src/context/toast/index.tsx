@@ -5,7 +5,7 @@ interface ToastContextProviderProps {
   children: ReactNode;
 }
 
-interface IToast {
+export interface IToast {
   message: string;
   severity: "error" | "success" | "info" | "warning";
   show: boolean;
@@ -19,7 +19,7 @@ interface ToastContextData {
   onClose: () => void;
 }
 
-const ToastContext = createContext({} as ToastContextData);
+export const ToastContext = createContext({} as ToastContextData);
 
 export function ToastContextProvider({ children }: ToastContextProviderProps) {
   const [toast, setToast] = useState<IToast>({} as IToast);

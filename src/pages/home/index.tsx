@@ -31,9 +31,7 @@ const Home = () => {
     } catch (err) {
       showMessage({ message: "Falha ao localizar CEP", severity: "error" });
     } finally {
-      setTimeout(() => {
-        setIsSearching(false);
-      }, 2000);
+      setIsSearching(false);
     }
   };
 
@@ -65,7 +63,7 @@ const Home = () => {
           textFieldProps={{
             size: "small",
             label: "Digite um CEP",
-            placeholder: "01001-000",
+            placeholder: "00000-000",
             InputProps: {
               endAdornment: (
                 <InputAdornment position="start">
@@ -99,7 +97,13 @@ const Home = () => {
             style={{ maxWidth: isMobile ? 500 : "" }}
           />
         )}
-        {cepData && !isSearching && <MemoizedCepDataTable cepData={cepData} isMobile={isMobile} />}
+        {cepData && !isSearching && (
+          <MemoizedCepDataTable
+            data-testid="cep-data-table"
+            cepData={cepData}
+            isMobile={isMobile}
+          />
+        )}
       </Stack>
     </Stack>
   );
