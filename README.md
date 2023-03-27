@@ -40,9 +40,9 @@ $ npm run dev
 You can use docker to see the application working, just run at the root of the project:
 
     
-    $ docker build -t test-teceo-front:latest -f ./Dockerfile .
+    $ docker build -t challenge-teceo-front:latest -f ./Dockerfile .
     
-    $ docker run -p 80:80 test-teceo-front:latest
+    $ docker run -p 80:80 challenge-teceo-front:latest
     
 
 After that the app will be available on port 80
