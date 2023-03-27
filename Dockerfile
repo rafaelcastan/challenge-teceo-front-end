@@ -1,13 +1,13 @@
-FROM node:18.14.2 AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-COPY ./package.json /app/package.json
-COPY ./yarn.lock /app/yarn.lock
+COPY ./package.json ./package.json
+COPY ./yarn.lock ./yarn.lock
 
 RUN yarn install
 
-COPY . /app
+COPY . .
 
 RUN yarn build
 
