@@ -3,13 +3,13 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 COPY ./package.json ./package.json
-COPY ./yarn.lock ./yarn.lock
+COPY ./package-lock.json ./package-lock.json
 
-RUN yarn install
+RUN npm ci
 
 COPY . .
 
-RUN yarn build
+RUN npm run build
 
 FROM nginx:latest
 
